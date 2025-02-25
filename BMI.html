@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  <!-- Character set declaration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport setting for responsive design -->
+    <title>BMI Calculator</title> <!-- Sets the title of the HTML document -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/> <!--Link for favicon -->
+    <link rel="stylesheet" href="BMI.css"/>  <!-- Link to the external CSS stylesheet -->
+</head>
+<body>
+    <div class="container">  <!-- Main container for the page content -->
+        <div class="box">  <!-- Box containing the calculator elements -->
+            <p class="cal">CALCULATE YOUR BMI</p>  <!-- Title of the calculator -->
+            <div class="content">  <!-- Content area for inputs and buttons -->
+                <div class="input">  <!-- Container for the name input field -->
+                    <label for="input">Your Name:</label>  <!-- Label for the name input -->
+                    <input type="text" id="input" name="fullname" required placeholder="Enter your name">  <!-- Input field for the user's name -->
+                </div>
+                <div class="input">  <!-- Container for the height input field -->
+                    <label for="height">Height (inches):</label>  <!-- Label for the height input -->
+                    <input type="number" id="height" required placeholder="Enter height in inches">  <!-- Input field for height -->
+                </div>
+                <div class="input">  <!-- Container for the weight input field -->
+                    <label for="weight">Weight (Pounds):</label>  <!-- Label for the weight input -->
+                    <input type="number" id="weight" required placeholder="Enter weight in pounds">  <!-- Input field for weight -->
+                </div>
+                <button id="btn">Calculate BMI</button>  <!-- Button to trigger BMI calculation -->
+                <button id="btn2">Reset</button>  <!-- Button to reset input fields -->
+            </div>
+            <div class="result">  <!-- Container to display the BMI result -->
+                <p>Your BMI is</p>  <!-- Text displaying "Your BMI is" -->
+                <input type="text" id="result" placeholder="00.00" readonly>  <!-- Input field to display the calculated BMI -->
+                <p class="comment">Comment: <span id="comment"></span></p>  <!-- Paragraph for displaying comments based on BMI -->
+            </div>
+        </div>
+    </div>
+    <script src="BMI.js"></script>  <!-- Link to the external JavaScript file -->
+</body>
+</html>
+

@@ -1,0 +1,181 @@
+ss
+/* Resets default padding and margin for all elements */
+* {
+    padding: 0;       /* Removes default padding */
+    margin: 0;        /* Removes default margin */
+    /* box-sizing: border-box;  Consider using this for predictable sizing */
+}
+
+body {
+    display: flex;                  /* Use flexbox for centering content */
+    justify-content: center;        /* Center content horizontally */
+    align-items: center;             /* Center content vertically */
+    min-height: 100vh;              /* Set minimum height to 100% of viewport height */
+    background-position: center;    /* Center background image */
+    background: #000;               /* Set background color to black */
+    /*You may want to add an image*/
+}
+
+/* Style for the calculator title */
+.cal {
+    font-size: 40px;                                     /* Set font size */
+    padding: 30px 0;                                     /* Add padding to top and bottom */
+    text-decoration: none;                               /* Remove text decoration */
+    background: linear-gradient(90deg, #a12705, #ff00c8); /* Create a linear gradient background */
+    -webkit-background-clip: text;                         /* Clip the background to the text */
+    -webkit-text-fill-color: transparent;                 /* Make the text transparent to show the background */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Set font family */
+}
+
+/* Style for the main calculator container */
+.box {
+    min-width: 400px;           /* Set minimum width */
+    background: rgb(240, 240, 240); /* Set background color to light gray */
+    border-radius: 38px;          /* Round the corners */
+    text-align: center;           /* Center text */
+    position: relative;           /* Needed for the pseudo-element */
+    /*padding: 20px;  Consider adding padding to prevent content from touching the edges*/
+
+}
+
+/* Pseudo-element for the background effect */
+.box::before {
+    content: "";                      /* Required for pseudo-elements */
+    position: absolute;               /* Position relative to the .box */
+    width: 110%;                      /* Slightly larger than .box */
+    height: 110%;                     /* Slightly larger than .box */
+    left: -5%;                        /* Center horizontally */
+    top: -5%;                         /* Center vertically */
+    /*background-color: rgb(255, 255, 255,0.3);   Semi-transparent white background*/
+    box-shadow: 0 0 10px rgba(199, 154, 154, 0.2); /* Add a subtle box shadow */
+    border-radius: 50px; /* Creates a circle */
+    z-index: -1;                       /* Place behind the .box content */
+    background: transparent;          /* Make the background transparent */
+    border: 2px solid rgb(110, 10, 10); /* Add a dark red border */
+    backdrop-filter: blur(20px);       /* Apply a blur effect to the background */
+
+}
+
+/* Style for the content within the box */
+.content {
+    padding: 0 40px;   /* Add horizontal padding */
+}
+
+/* Style for input sections */
+.input {
+    background: #fff;                              /* Set background color to white */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);        /* Add a box shadow */
+    border-radius: 28px;                             /* Round the corners */
+    padding: 20px 0;                                 /* Add top and bottom padding */
+    margin-bottom: 20px;                             /* Add margin to the bottom */
+
+}
+
+/* Style for input labels */
+.input label {
+    display: block;        /* Make labels take up the full width */
+    font-size: 18px;        /* Set font size */
+    font-weight: 600;       /* Set font weight to bold */
+    color: #000;           /* Set text color to black */
+    margin-bottom: 20px;    /* Add margin to the bottom */
+    text-align: center; /* Centers labels*/
+}
+
+/* Style for input fields */
+.input input {
+    outline: none;           /* Remove the outline on focus */
+    border: none;            /* Remove the border */
+    border-bottom: 1px solid #4f7df9; /* Add a bottom border */
+    width: 30%;             /* Set the width */
+    text-align: center;     /* Center the text */
+    font-size: 28px;         /* Set the font size */
+}
+
+/* Style for the calculate button */
+button#btn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Set font family */
+    color: #fff;                                                          /* Set text color to white */
+    background: linear-gradient(90deg, #a12705, #ff00c8);                  /* Create a linear gradient background */
+    font-size: 20px;                                                         /* Set font size */
+    border-radius: 12px;                                                      /* Round the corners */
+    padding: 12px 0;                                                         /* Add top and bottom padding */
+    width: 100%;                                                            /* Make it take up the full width */
+    outline: none;                                                          /* Remove the outline */
+    border: none;                                                           /* Remove the border */
+}
+
+/* Hover effect for the calculate button */
+button#btn:hover {
+    background: linear-gradient(90deg, #f1a590, #f56ed8); /* Change the background on hover */
+}
+
+/* Style for the result section */
+.result {
+    padding: 20px 10px; /* Add padding */
+}
+
+/* Style for the result paragraph */
+.result p {
+    font-weight: 500px; /* Set font weight */
+    font-size: 22px;     /* Set font size */
+    color: #000;        /* Set text color to black */
+    margin-bottom: 15px; /* Add margin to the bottom */
+    text-align: center;/*Centers the results*/
+}
+
+/* Style for the result input/display area */
+.result #result {
+    color: #a12705;                /* Set the text color to dark red */
+    display: inline-block;         /* Display as an inline block */
+    outline: none;                 /* Remove the outline */
+    border: none;                  /* Remove the border */
+    width: 30%;                   /* Set the width */
+    text-align: center;            /* Center the text */
+    font-size: 28px;                /* Set the font size */
+    background: none; /*Makes the background transparent*/
+
+}
+
+/* Comment section */
+/* Style for the comment */
+#comment {
+    font-weight: 800;/*Make the text bolder*/
+    font-size: 25px;    /* Set the font size */
+    color: #000;       /* Set the text color to black */
+    text-align: center;/*Centers the comment*/
+}
+
+.comment {
+    font-size: 25px;    /* Set the font size */
+    color: red;       /* Set the text color to red */
+}
+
+.input1 {
+    font-size: 25px;    /* Set the font size */
+    width: 100%;          /* Make it take up the full width */
+    font-size: 20px;    /* Set the font size */
+    margin: 15px 0;      /* Add top and bottom margin */
+    border: 0;           /* Remove the border */
+    border-radius: 5px;   /* Round the corners */
+    outline: none;        /* Remove the outline */
+    padding: 12px 0;      /* Add top and bottom padding */
+}
+
+/* Style for the reset button */
+button#btn2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Set font family */
+    color: #090909;                                                          /* Set text color to dark gray */
+    background: linear-gradient(90deg, #a12705, #ff00c8);                  /* Create a linear gradient background */
+    font-size: 20px;                                                         /* Set font size */
+    border-radius: 12px;                                                      /* Round the corners */
+    padding: 12px 0;                                                         /* Add top and bottom padding */
+    width: 50%;                                                            /* Set the width */
+    outline: none;                                                          /* Remove the outline */
+    border: none;                                                           /* Remove the border */
+    margin-top: 10px;                                                        /* Add margin to the top */
+}
+
+/* Hover effect for the reset button */
+button#btn2:hover {
+    background: linear-gradient(90deg, #f1a590, #f56ed8); /* Change the background on hover */
+}
